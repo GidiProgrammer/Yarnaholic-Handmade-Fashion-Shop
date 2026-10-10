@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Yarnaholic"
+description = "A premium handmade crochet fashion storefront with product discovery, a persistent demo cart and wishlist, clearly labelled demo checkout, and guided custom-design enquiries."
+version = "1.0.0"
+id = "artifacts/yarnaholic-store"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22930
+
+[services.development]
+run = "pnpm --filter @workspace/yarnaholic-store run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/yarnaholic-store", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/yarnaholic-store/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22930"
+BASE_PATH = "/"
