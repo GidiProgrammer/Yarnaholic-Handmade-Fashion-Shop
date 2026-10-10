@@ -7,6 +7,7 @@ import { Route, Switch, useLocation, useRoute, Router as WouterRouter, Link } fr
 import { ArrowDownRight, ArrowLeft, ArrowRight, Check, Heart, Menu, Search, ShoppingBag, X, SlidersHorizontal, Plus, Minus, Instagram, RotateCcw, ImagePlus } from 'lucide-react';
 import { categories, collections, products, type Product, type Category } from '@/data/catalogue';
 import { formatMoney, localStore, makeLine, type CartLine } from '@/services/local-store';
+import heroCampaignImage from '@assets/generated_images/yarnaholic-editorial-hero.jpg';
 
 const queryClient = new QueryClient();
 type GlobalProps={wish:string[];cart:CartLine[];toast:(s:string)=>void;toggleWish:(id:string)=>void;addCart:(p:Product,size?:string,color?:string,qty?:number)=>void;setCart:(x:CartLine[])=>void};
@@ -48,7 +49,22 @@ function ProductGrid({items,props}:{items:Product[];props:GlobalProps}) { return
 function HomePage({props}:{props:GlobalProps}) {
  const featured=products.slice(0,8);
  return <><Meta title="Handmade crochet, made to be yours" description="Explore Yarnaholic's expressive handmade crochet fashion, accessories, gifts and custom pieces."/>
- <section className="hero"><div className="hero-copy"><span className="eyebrow">HANDMADE WITH INTENTION</span><h1>Made by hand.<br/>Made to be yours.</h1><p>Thoughtfully crafted crochet fashion and one-of-a-kind pieces, made to bring your personal style to life.</p><div className="hero-buttons"><Link className="btn" href="/shop">Explore the collection <ArrowRight size={15}/></Link><Link className="btn btn-outline" href="/custom-design">Create something custom</Link></div></div><div className="hero-image"><img src="/images/editorial-dress.jpg" alt="Model in sculptural handmade crochet fashion in a sunlit courtyard" fetchPriority="high"/><span className="hero-note">Handmade · Accra spirit · Your own story</span></div></section>
+  <section className="home-hero" aria-labelledby="home-hero-title">
+   <div className="home-hero-copy">
+    <span className="home-hero-index">01 / THE COLLECTION</span>
+    <span className="eyebrow">HANDMADE. UNCOMMON. YOURS.</span>
+    <h1 id="home-hero-title">Crochet, with a<br/>point of view.</h1>
+    <p>Distinctive handmade pieces, thoughtfully crafted to make your style entirely your own.</p>
+    <div className="home-hero-actions">
+     <Link className="home-hero-primary" href="/shop">Shop the collection <ArrowRight size={16} aria-hidden="true"/></Link>
+     <Link className="home-hero-secondary" href="/custom-design">Create your own</Link>
+    </div>
+   </div>
+   <div className="home-hero-media">
+    <img className="home-hero-image" src={heroCampaignImage} alt="A Black woman in a contemporary ivory crochet top and burgundy skirt, walking through a sunlit terracotta courtyard" fetchPriority="high"/>
+    <span className="home-hero-caption">MADE BY HAND. WORN YOUR WAY.</span>
+   </div>
+  </section>
  <section className="section wrap"><div className="section-head"><div><span className="eyebrow">FIND YOUR THREAD</span><h2>Shop by feeling.</h2></div><Link className="text-link" href="/shop">All pieces <ArrowRight size={14}/></Link></div><div className="category-grid">{categories.map((c,i)=><Link className="category-card" key={c.slug} href={c.slug==='custom'?'/custom-design':`/collections/${c.slug}`}><img src={c.image} alt={`${c.name} crochet collection`} loading="lazy"/><span className="category-label">{c.name}<ArrowDownRight size={16}/></span></Link>)}</div></section>
  <section className="section" style={{background:'#f1e9e0'}}><div className="wrap"><div className="section-head"><div><span className="eyebrow">THE PIECES WE KEEP CLOSE</span><h2>Pieces worth keeping.</h2></div><Link className="text-link" href="/shop">View all pieces <ArrowRight size={14}/></Link></div><ProductGrid items={featured} props={props}/></div></section>
  <section className="section wrap"><div className="editorial-band"><img src="/images/crochet-set.jpg" alt="Colorful crochet set styled in warm afternoon light" loading="lazy"/><div className="editorial-copy"><span className="eyebrow">A LITTLE SOMETHING ONLY YOU COULD IMAGINE</span><h2>Have something special in mind?</h2><p>Your idea, your colors, your fit. Tell us what you envision, and let's bring it to life, stitch by stitch. A request begins a conversation—not a confirmed order.</p><Link className="btn" href="/custom-design">Request a custom design <ArrowRight size={14}/></Link><div className="process">{['Share your idea','Discuss the details','Review a quote','We craft your piece'].map((t,i)=><div className="process-step" key={t}><b>0{i+1}</b><span>{t}</span></div>)}</div></div></div></section>

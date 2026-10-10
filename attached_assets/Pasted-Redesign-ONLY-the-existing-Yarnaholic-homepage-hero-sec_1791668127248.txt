@@ -1,0 +1,225 @@
+Redesign ONLY the existing Yarnaholic homepage hero section. Do not redesign the rest of the website or change the global brand identity.
+
+I want a significant visual upgrade. The current hero feels old-fashioned because of its oversized traditional serif headline, excessive empty space, conventional split-screen layout, and dated button styling.
+
+Transform it into a **modern, premium, editorial fashion hero for a contemporary handmade crochet fashion brand**. Think independent luxury fashion campaign, modern DTC ecommerce, and art-directed fashion magazine — not a traditional craft shop or generic Shopify template.
+
+IMPORTANT: Inspect the existing implementation and modify the actual hero component and its styles. Do not just describe changes or create a separate mockup. Preserve existing routing, shopping functionality, and custom-design links.
+
+## 1. Creative direction
+
+The new hero should communicate three things immediately:
+- Yarnaholic creates beautiful, contemporary handmade fashion.
+- Its pieces are stylish and desirable, not merely traditional crochet crafts.
+- Customers can shop existing pieces or commission something personal.
+
+The aesthetic should feel confident, modern, youthful, sophisticated, and visually distinctive.
+
+Aim for a design that would look at home on a premium independent fashion label's website in 2026.
+
+## 2. Layout — replace the current composition
+
+Remove the current rigid 50/50 split-screen hero.
+
+Create an editorial, asymmetrical composition with a large, immersive fashion photograph occupying approximately 60–70% of the desktop hero width. Integrate the text into the remaining space or carefully overlay it within the image composition.
+
+Explore an asymmetrical editorial grid:
+- A large, edge-to-edge hero photograph.
+- A compact, carefully positioned text block.
+- A small collection label or season marker.
+- Two refined calls to action.
+- One understated decorative detail, such as a vertical collection caption or a small numbered marker.
+
+The layout must feel intentionally art-directed rather than like two boxes placed next to each other.
+
+Use the existing header as the top boundary. Avoid excessive padding above or below the hero. At a 1440 × 900 desktop viewport, the hero should occupy most of the initial screen without making the headline or CTA difficult to find.
+
+Do not add a huge blank section beneath the hero or push the primary CTA below the fold.
+
+## 3. Photography — the most important change
+
+The current image has a good warm color palette, but the overall presentation feels like a static catalogue photograph.
+
+Use a more compelling fashion-campaign photograph of a stylish Black woman wearing a beautifully crafted, contemporary crochet outfit.
+
+Art direction:
+- Natural, confident, editorial posing.
+- Interesting silhouette and visible crochet texture.
+- Contemporary styling and sophisticated accessories.
+- Beautiful natural light with realistic shadows.
+- Warm architectural settings, rich earthy tones, or a clean neutral studio.
+- An editorial crop that emphasizes both the outfit and the model.
+- A sense of movement, personality, and modern fashion.
+
+The crochet garment should look wearable, beautifully made, and fashion-forward. It should be the focal point.
+
+Use a genuine, relevant high-quality image asset. If the project already contains a suitable hero image, evaluate whether it can be improved through a different crop. Otherwise, find or create an appropriate replacement and integrate it into the actual component.
+
+Do not use an unrelated stock photograph, a generic knitting image, or an image that does not clearly feature crochet fashion.
+
+### Image treatment
+
+- Use `object-fit: cover` with a deliberately selected `object-position`.
+- Avoid cutting off the model's head or obscuring important garment details.
+- Use a responsive image composition that changes appropriately on mobile.
+- Do not apply heavy filters, excessive overlays, artificial blur, or dramatic gradients.
+- If text overlaps the photograph, ensure excellent contrast without hiding the garment.
+
+The image must feel like the centrepiece of a fashion campaign, not an illustration beside marketing copy.
+
+## 4. Typography — modernize the hierarchy
+
+The existing headline is too large, too traditional, and broken into too many lines.
+
+Replace it with a shorter, more confident headline:
+
+Eyebrow:
+`HANDMADE. UNCOMMON. YOURS.`
+
+Main headline:
+`Crochet, with a point of view.`
+
+Supporting copy:
+`Distinctive handmade pieces, thoughtfully crafted to make your style entirely your own.`
+
+Use a contemporary typographic pairing:
+- A refined modern display face such as Instrument Serif, DM Sans Display, or a similarly elegant editorial font for the headline.
+- Inter, Manrope, or a comparable clean sans-serif for all supporting text and controls.
+
+You may use a modern serif, but avoid the extremely oversized, tightly stacked, old-fashioned magazine typography currently used.
+
+Typography requirements:
+- Keep the headline visually strong but compact.
+- Use a deliberate line break rather than letting the text wrap unpredictably.
+- Aim for approximately 52–68px on large desktop screens, scaling fluidly with `clamp()`.
+- Use comfortable line-height and carefully controlled letter spacing.
+- Limit the text block to a readable width.
+- Use small uppercase eyebrow text with subtle tracking.
+- Maintain readable supporting copy without making it too small.
+
+The result should be editorial but contemporary, not a wedding invitation or heritage luxury brand.
+
+## 5. Color palette
+
+Preserve the Yarnaholic brand identity.
+
+Use:
+- Deep burgundy: `#6B263D`
+- Warm ivory: `#FAF7F2`
+- Soft blush: `#D9A5AD`
+- Charcoal: `#292522`
+- Muted taupe: `#8C8179`
+
+However, do not fill the entire text panel with a flat dusty-beige block as in the existing design.
+
+Prefer warm ivory or a carefully selected neutral background. Let burgundy appear through small brand details, the primary CTA, and selected text accents.
+
+Allow the photography to introduce richer colors and contrast.
+
+The result should feel lighter, more contemporary, and more visually layered without relying on gradients.
+
+## 6. Calls to action — refine the styling
+
+Use two clear actions.
+
+Primary button:
+`Shop the collection`
+
+Secondary button:
+`Create your own`
+
+The primary button should use a restrained burgundy background, white text, and a small arrow icon. Keep the corners only slightly rounded or use a sophisticated minimal radius.
+
+The secondary CTA should be a refined text link with a subtle underline or a very light outline, rather than another large rectangular button.
+
+Interaction details:
+- Add smooth hover transitions.
+- Slightly shift the arrow on hover.
+- Include visible keyboard-focus styles.
+- Maintain adequate touch-target sizes.
+- Ensure both actions navigate to the existing shop and custom-design routes.
+
+Avoid oversized buttons, excessive letter spacing, thick borders, pill-shaped buttons, and decorative icons that add no value.
+
+## 7. Add subtle editorial details
+
+Include at most two or three of the following:
+- A small `01 / THE COLLECTION` marker.
+- A discreet vertical caption reading `MADE SLOWLY. WORN FOREVER.` only if the sustainability implication is appropriate for the brand; otherwise use `MADE BY HAND. WORN YOUR WAY.`
+- A small floating label such as `HANDCRAFTED STATEMENT PIECES`.
+- A subtle image reveal animation.
+- A tiny scroll cue at the bottom of the hero.
+
+These details should add personality without competing with the product photograph or headline.
+
+Do not add floating cards, excessive badges, ornamental lines everywhere, or multiple competing labels.
+
+## 8. Header relationship
+
+Keep the existing Yarnaholic header and navigation.
+
+Ensure the hero starts directly beneath the header and that the transition between the two feels intentional.
+
+Do not introduce a second navigation bar or another announcement strip.
+
+Preserve the existing logo, shopping bag, wishlist, and search controls.
+
+The hero must look visually connected to the rest of the existing website.
+
+## 9. Responsive behaviour
+
+The mobile hero needs its own deliberate composition.
+
+On mobile:
+- Use the fashion photograph as the dominant visual element.
+- Place the headline and supporting copy in a compact, readable area either below the image or in a carefully designed overlay.
+- Keep the headline around 36–44px where space permits.
+- Prevent text from overlapping the model's face or essential garment details.
+- Keep both CTAs accessible without excessive scrolling.
+- Stack the actions only when necessary.
+- Preserve good spacing around the header.
+- Avoid horizontal overflow and awkward image crops.
+
+At tablet widths, transition naturally between the desktop and mobile layouts. Do not simply shrink the desktop layout.
+
+## 10. Motion and performance
+
+Use minimal, polished motion:
+- A subtle image fade or reveal.
+- A short text entrance animation, if appropriate.
+- Smooth button and image transitions.
+
+Keep motion quick and restrained. Respect `prefers-reduced-motion`.
+
+Do not delay the appearance of the headline or CTA. Avoid heavy animation libraries for such a small section.
+
+Optimize the hero image, provide explicit dimensions or aspect ratios, and avoid layout shifts.
+
+## 11. Implementation constraints
+
+- Modify the existing hero component rather than rebuilding the entire website.
+- Reuse the existing design tokens and project conventions where possible.
+- Preserve working routes and functionality.
+- Do not change the header, product sections, footer, or other homepage sections.
+- Do not introduce unnecessary dependencies.
+- Use responsive CSS and clean, maintainable component code.
+- Verify that all images load correctly.
+
+## 12. Final visual quality test
+
+After implementing the changes, inspect the rendered hero at 1440px desktop width and approximately 390px mobile width.
+
+Ask yourself:
+- Does it look like a contemporary fashion brand rather than a traditional crochet store?
+- Is the photograph immediately compelling?
+- Can the headline be understood within two seconds?
+- Is the CTA obvious without dominating the composition?
+- Does the layout feel balanced without excessive empty space?
+- Does the hero look distinctive rather than like a generic ecommerce template?
+- Does the mobile version feel intentionally designed?
+
+If any answer is no, refine the implementation.
+
+The desired outcome is a sophisticated, image-led, contemporary fashion hero with excellent typography, confident spacing, subtle burgundy accents, and a memorable visual identity.
+
+Make the actual code changes and verify the result. Do not stop at a written design proposal.
