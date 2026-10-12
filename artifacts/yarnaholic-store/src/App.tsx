@@ -80,21 +80,38 @@ function ProductCard({product:p,props,quick=true}:{product:Product;props:GlobalP
 function ProductGrid({items,props}:{items:Product[];props:GlobalProps}) { return <div className="product-grid">{items.map(p=><ProductCard key={p.id} product={p} props={props}/>)}</div>; }
 function HomePage({props}:{props:GlobalProps}) {
  const featured=products.slice(0,8);
+  const promoProduct=products.find(product=>product.id==='bloom-tote')||products[0];
  return <><Meta title="Handmade crochet, made to be yours" description="Explore Yarnaholic's expressive handmade crochet fashion, accessories, gifts and custom pieces."/>
-  <section className="home-hero" aria-labelledby="home-hero-title">
-   <img className="home-hero-image" src={heroCampaignImage} alt="A Black woman in a handmade ivory crochet top and burgundy skirt in a sunlit courtyard" fetchPriority="high"/>
-   <div className="home-hero-copy">
-    <span className="home-hero-index">01 / THE COLLECTION</span>
-    <span className="eyebrow">HANDMADE. UNCOMMON. YOURS.</span>
-    <h1 id="home-hero-title">Crochet, with a<br/>point of view.</h1>
-    <p>Distinctive handmade pieces, thoughtfully crafted to make your style entirely your own.</p>
-    <div className="home-hero-actions">
-     <Link className="home-hero-primary" href="/shop">Shop the collection <ArrowRight size={16} aria-hidden="true"/></Link>
-     <Link className="home-hero-secondary" href="/custom-design">Create your own</Link>
+   <div className="home-showcase">
+    <section className="home-hero" aria-labelledby="home-hero-title">
+     <div className="home-hero-copy">
+      <span className="home-hero-index">01 / THE COLLECTION</span>
+      <span className="eyebrow">HANDMADE. UNCOMMON. YOURS.</span>
+      <h1 id="home-hero-title">Crochet, with a<br/>point of view.</h1>
+      <p>Distinctive handmade pieces, thoughtfully crafted to make your style entirely your own.</p>
+      <div className="home-hero-actions">
+       <Link className="home-hero-primary" href="/shop">Shop the collection <ArrowRight size={16} aria-hidden="true"/></Link>
+       <Link className="home-hero-secondary" href="/custom-design">Create your own</Link>
+      </div>
+     </div>
+     <div className="home-hero-visual">
+      <img className="home-hero-image" src={heroCampaignImage} alt="A Black woman wearing a handmade ivory crochet top and burgundy skirt in a sunlit courtyard" fetchPriority="high"/>
+      <span className="home-hero-caption" aria-hidden="true">MADE BY HAND. WORN YOUR WAY.</span>
+     </div>
+    </section>
+    <div className="home-promo-grid" aria-label="Explore Yarnaholic">
+     <Link className="home-promo home-promo-wide" href="/shop">
+      <img src="/images/crochet-set.jpg" alt="Colorful handmade crochet outfit from the Yarnaholic collection"/>
+      <span className="home-promo-copy"><span className="eyebrow">THE PIECES WE KEEP CLOSE</span><strong>Pieces worth keeping.</strong><span>One-of-a-kind texture, thoughtful details, and room for your own style.</span></span>
+      <ArrowRight className="home-promo-arrow" size={19} aria-hidden="true"/>
+     </Link>
+     <Link className="home-promo home-promo-product" href={`/products/${promoProduct.slug}`}>
+      <span className="home-promo-copy"><span className="eyebrow">MADE SLOWLY, BY HAND</span><strong>{promoProduct.name}</strong><span>{formatMoney(promoProduct.price)} <i aria-hidden="true">·</i> {promoProduct.status}</span></span>
+      <img src={promoProduct.image} alt={promoProduct.alt}/>
+      <ArrowRight className="home-promo-arrow" size={19} aria-hidden="true"/>
+     </Link>
     </div>
    </div>
-   <span className="home-hero-caption" aria-hidden="true">MADE BY HAND. WORN YOUR WAY.</span>
-  </section>
   <section className="home-benefits wrap" aria-label="What makes Yarnaholic special">
    <div className="home-benefit"><span className="home-benefit-icon" aria-hidden="true"><Check size={17}/></span><div><h2>Made by hand</h2><p>Thoughtful crochet, crafted one stitch at a time.</p></div></div>
    <div className="home-benefit"><span className="home-benefit-icon" aria-hidden="true"><Heart size={17}/></span><div><h2>Made for your idea</h2><p>Start a custom design conversation around your vision.</p></div></div>
