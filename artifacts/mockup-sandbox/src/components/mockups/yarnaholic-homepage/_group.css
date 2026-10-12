@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap");
 
 :root {
-  --berry: #6b263d;
-  --rose: #d9a5ad;
+  --berry: #a95531;
+  --rose: #e2a17f;
+  --brand-dark: #713b28;
+  --brand-hover: #843f25;
   --ivory: #faf7f2;
   --cream: #f0e8dd;
   --ink: #292522;
@@ -84,21 +86,14 @@
 .yh-current .yh-brand {
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: var(--berry);
-  font: 30px var(--app-font-serif);
-  letter-spacing: -.035em;
   white-space: nowrap;
 }
 
-.yh-current .yh-brand-mark {
-  display: grid;
-  width: 26px;
-  height: 26px;
-  place-items: center;
-  border: 1px solid var(--rose);
-  border-radius: 50%;
-  font-size: 16px;
+.yh-current .yh-brand-logo {
+  display: block;
+  width: 190px;
+  max-height: 28px;
+  height: auto;
 }
 
 .yh-current .yh-nav,
@@ -178,7 +173,7 @@
 
 .yh-current .home-hero-secondary {
   padding: 0 0 2px;
-  border-bottom: 1px solid #aa8d91;
+  border-bottom: 1px solid #d0a188;
   color: var(--berry);
 }
 
@@ -187,7 +182,7 @@
   min-width: 0;
   min-height: inherit;
   overflow: hidden;
-  background: #d9a5ad;
+  background: var(--rose);
 }
 
 .yh-current .home-hero-image {

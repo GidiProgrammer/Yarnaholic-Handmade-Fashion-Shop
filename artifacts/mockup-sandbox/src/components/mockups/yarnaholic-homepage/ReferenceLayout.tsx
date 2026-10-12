@@ -65,19 +65,11 @@ const styles = `
 .yh-reference .ref-brand {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  color: var(--berry);
-  font: 31px/1 var(--app-font-serif);
-  letter-spacing: -.045em;
 }
-.yh-reference .ref-mark {
-  width: 27px;
-  height: 27px;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--rose);
-  border-radius: 50%;
-  font: 16px var(--app-font-serif);
+.yh-reference .ref-brand-logo {
+  display: block;
+  width: 200px;
+  height: auto;
 }
 .yh-reference .ref-tools { display: flex; align-items: center; gap: 17px; }
 .yh-reference .ref-icon-button {
@@ -501,7 +493,8 @@ const styles = `
   color: var(--ref-muted);
   font-size: 9px;
 }
-.yh-reference .ref-footer-brand { color: var(--berry); font: 21px var(--app-font-serif); }
+.yh-reference .ref-footer-brand { display: inline-flex; align-items: center; }
+.yh-reference .ref-footer-logo { display: block; width: 155px; height: auto; }
 .yh-reference a:focus-visible,
 .yh-reference button:focus-visible,
 .yh-reference input:focus-visible { outline: 2px solid var(--berry); outline-offset: 3px; }
@@ -511,7 +504,7 @@ const styles = `
   .yh-reference .ref-brand-row,
   .yh-reference .ref-search { width: calc(100% - 32px); }
   .yh-reference .ref-brand-row { min-height: 64px; }
-  .yh-reference .ref-brand { font-size: 28px; }
+  .yh-reference .ref-brand-logo { width: 155px; }
   .yh-reference .ref-tools { gap: 9px; }
   .yh-reference .ref-menu-button { display: inline-grid; }
   .yh-reference .ref-navigation {
@@ -581,7 +574,7 @@ const styles = `
   .yh-reference .ref-editorial-copy { padding: 27px 23px 31px; }
   .yh-reference .ref-editorial-copy h2 { font-size: 37px; }
   .yh-reference .ref-footer { padding: 16px; font-size: 8px; }
-  .yh-reference .ref-footer-brand { font-size: 18px; }
+  .yh-reference .ref-footer-logo { width: 128px; }
 }
 @media (max-width: 400px) {
   .yh-reference .ref-topline { font-size: 8px; }
@@ -627,7 +620,7 @@ export function ReferenceLayout() {
             {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
           <a className="ref-brand" href="#top" aria-label="Yarnaholic home">
-            <span className="ref-mark">Y</span> yarnaholic
+            <img className="ref-brand-logo" src="/__mockup/images/yarnaholic-logo.png" alt="" />
           </a>
           <div className="ref-tools" aria-label="Shop tools">
             <button className="ref-icon-button" aria-label={searchOpen ? "Close search" : "Search products"} onClick={() => setSearchOpen((open) => !open)} type="button">
@@ -765,7 +758,7 @@ export function ReferenceLayout() {
         </section>
       </main>
       <footer className="ref-footer">
-        <a className="ref-footer-brand" href="#top">yarnaholic</a>
+        <a className="ref-footer-brand" href="#top" aria-label="Yarnaholic home"><img className="ref-footer-logo" src="/__mockup/images/yarnaholic-logo.png" alt="" /></a>
         <span>Handmade. Uncommon. Yours.</span>
         <a href="#top">Back to top ↑</a>
       </footer>

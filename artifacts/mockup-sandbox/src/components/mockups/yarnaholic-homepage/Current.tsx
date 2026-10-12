@@ -27,7 +27,7 @@ export function Current() {
       <header className="yh-header">
         <div className="yh-wrap yh-header-inner">
           <a className="yh-brand" href="#">
-            <span className="yh-brand-mark">Y</span> yarnaholic
+            <img className="yh-brand-logo" src="/__mockup/images/yarnaholic-logo.png" alt="Yarnaholic" />
           </a>
           <nav className="yh-nav" aria-label="Main navigation">
             <a href="#">Shop</a><a href="#">Clothing</a><a href="#">Bags & Accessories</a>
